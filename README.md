@@ -44,3 +44,35 @@ pytest -s .\tests\test_trg_assignment.py
 
 ## 🟡 NOTE: 
 Do not move your mouse cursor while the test is running in headed mode 🙂
+
+## 🔹 Project Structure
+```bash
+project/
+│
+├── pages/ # Page Object Model classes
+│ ├── base_page.py
+│ ├── home_page.py
+│ ├── careers_page.py
+│ └── lifeAtTRG_page.py
+│
+├── utils/ # Utility classes and methods
+│ └── utility.py
+│
+├── tests/ # Pytest test files
+│ └── test_trg_assignment.py
+│
+├── conftest.py # Pytest fixtures
+├── playwright.config.py # Playwright configuration
+└── README.md
+```
+
+## 🔹 How POM Works
+
+• BasePage contains common methods for navigation and interaction
+
+• Each page (HomePage, CareersPage, LifeAtTRGPage) inherits from BasePage and defines its own locators and methods
+
+• Tests use page instances to perform actions
+
+• Any functionality that is not page-specific, like generating random names, is located in utils/utility.py
+
